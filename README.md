@@ -42,8 +42,8 @@ This workflow handles the destruction of infrastructure:
 1. **Clone this repository**:
 
    ```
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/azniosman/Assignment-3.1.git
+   cd Assignment-3.1
    ```
 
 2. **Configure AWS Credentials**:
@@ -96,12 +96,3 @@ This repository demonstrates several IaC best practices:
 - **Plan Before Apply**: Review changes in PRs before they're applied
 - **Environment Isolation**: Configure different environments with variables
 - **Version Control**: All configurations stored in version control
-
-## Contributing
-
-1. Create a feature branch
-2. Make your changes
-3. Create a Pull Request
-4. Wait for the CI checks to pass
-5. Request reviews
-6. Merge after approval
