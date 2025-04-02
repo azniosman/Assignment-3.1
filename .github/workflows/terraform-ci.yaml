@@ -50,7 +50,7 @@ jobs:
         run: terraform plan -no-color -out=tfplan
 
       - name: Upload Terraform Plan
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@latest
         with:
           name: tfplan
           path: tfplan
