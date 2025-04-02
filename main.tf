@@ -2,6 +2,21 @@
 # AWS Infrastructure Example
 ####################################
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"  # Specify the version you want to use
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"  # Specify the version you want to use
+    }
+  }
+
+  required_version = ">= 1.0"  # Specify the minimum Terraform version required
+}
+
 # S3 Bucket with versioning enabled
 resource "aws_s3_bucket" "app_data" {
   bucket = "${var.bucket_name_prefix}-${var.environment}-${random_id.suffix.hex}"
@@ -45,6 +60,8 @@ resource "aws_vpc" "main" {
   
   tags = {
     Name = "${var.project_name}-${var.environment}-vpc"
+    Environment = var.environment
+    ManagedBy = "Terraform"
   }
 }
 
